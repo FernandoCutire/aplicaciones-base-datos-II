@@ -32,7 +32,7 @@ En la carpeta **datos** se cargarán los datos de la aplicación
 En la carpeta **datos** se cargarán las tablas de la aplicación
 
 ### Vistas
-En la carpeta datos se crearán las vistas de la aplicación
+En la carpeta **vistas** se crearán las vistas de la aplicación
 
 ## main.sql
 El archivo **main.sql** contiene la inserción de tablas, datos y vistas en un solo script.

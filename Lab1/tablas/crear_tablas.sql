@@ -34,9 +34,9 @@ ALTER TABLE medidas ADD CONSTRAINT medidas_pk PRIMARY KEY ( id_umedida );
 CREATE TABLE recetas (
     id_receta     NUMBER NOT NULL,
     nombre_receta VARCHAR2(100),
-    preparacion   VARCHAR2(500),
+    preparacion   VARCHAR2(2500),
     duracion      VARCHAR2(10),
-    comentarios   VARCHAR2(500),
+    comentarios   VARCHAR2(2500),
     tipoplato     NUMBER NOT NULL
 );
 

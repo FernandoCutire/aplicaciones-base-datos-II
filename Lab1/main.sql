@@ -70,6 +70,26 @@ ALTER TABLE tipoplatos
     ADD CONSTRAINT tipoplatos_categoria_fk FOREIGN KEY ( cod_cat )
         REFERENCES categoria ( id_cat );
 
+CREATE VIEW VIEW_INGREDIENTES_POR_RECETA
+AS select
+    r.id_receta, r.nombre_receta, i.nombre_ingrediente, c.cantidad, m.nombre_medida
+from
+    recetas r, ingredientes i, medidas m,  cantidades c
+where c.receta = r.id_receta and c.ingrediente = i.id_ingrediente and c.medida = m.id_umedida;
+
+CREATE VIEW VIEW_RECETAS
+AS SELECT
+    id_receta, nombre_receta as "Receta", preparacion
+FROM
+    recetas;s
+
+CREATE VIEW VIEW_PLATOS_POR_HORARIO
+AS select
+    c.combre_cat, t.nombre_plato
+from
+    categoria c, tipoplatos t
+where c.id_cat = t.cod_cat;
+
 
 ---- INSERT PARA LAS TABLAS---
 
@@ -284,23 +304,4 @@ INSERT INTO CANTIDADES VALUES( 6,66, 1, 15  );
 INSERT INTO CANTIDADES VALUES( 6,67, 1, 15  );
 INSERT INTO CANTIDADES VALUES( 6,52, 2, 4  );
 
-CREATE VIEW VIEW_INGREDIENTES_POR_RECETA
-AS select
-    r.id_receta, r.nombre_receta, i.nombre_ingrediente, c.cantidad, m.nombre_medida
-from
-    recetas r, ingredientes i, medidas m,  cantidades c
-where c.receta = r.id_receta and c.ingrediente = i.id_ingrediente and c.medida = m.id_umedida;
-
-CREATE VIEW VIEW_RECETAS
-AS SELECT
-    id_receta, nombre_receta as "Receta", preparacion
-FROM
-    recetas;s
-
-CREATE VIEW VIEW_PLATOS_POR_HORARIO
-AS select
-    c.combre_cat, t.nombre_plato
-from
-    categoria c, tipoplatos t
-where c.id_cat = t.cod_cat;
 

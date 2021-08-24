@@ -12,7 +12,7 @@ ALTER TABLE cantidades
 
 CREATE TABLE categoria (
     id_cat     NUMBER NOT NULL,
-    combre_cat VARCHAR2(45)
+    n   ombre_cat VARCHAR2(45)
 );
 
 ALTER TABLE categoria ADD CONSTRAINT categoria_pk PRIMARY KEY ( id_cat );
@@ -69,6 +69,7 @@ ALTER TABLE recetas
 ALTER TABLE tipoplatos
     ADD CONSTRAINT tipoplatos_categoria_fk FOREIGN KEY ( cod_cat )
         REFERENCES categoria ( id_cat );
+
 
 
 

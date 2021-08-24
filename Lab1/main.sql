@@ -1,3 +1,5 @@
+
+-- Tabla --
 CREATE TABLE cantidades (
     receta      NUMBER NOT NULL,
     ingrediente NUMBER NOT NULL,
@@ -66,7 +68,7 @@ ALTER TABLE tipoplatos
         REFERENCES categoria ( id_cat );
 
 
-
+-- Vistas --
 CREATE VIEW VIEW_INGREDIENTES_POR_RECETA
 AS select
     r.id_receta, r.nombre_receta, i.nombre_ingrediente, c.cantidad, m.nombre_medida
@@ -86,6 +88,12 @@ AS select
 from
     categoria c, tipoplatos t
 where c.id_cat = t.cod_cat;
+
+-- Indices --
+CREATE UNIQUE INDEX INDEX_TIPOSPLATOS ON TIPOPLATOS (NOMBRE_PLATO DESC);
+
+CREATE UNIQUE INDEX INDEX_PLATO_UNICO ON TIPOPLATOS (NOMBRE_PLATO, COD_CAT);
+
 
 
 ---- INSERT PARA LAS TABLAS---

@@ -3,15 +3,11 @@ CREATE TABLE cantidades (
     ingrediente NUMBER NOT NULL,
     cantidad    NUMBER NOT NULL,
     medida      NUMBER NOT NULL
+
 );
 
-ALTER TABLE cantidades
-    ADD CONSTRAINT cantidades_pk PRIMARY KEY ( receta,
-                                               ingrediente,
-                                               medida );
-
 CREATE TABLE categoria (
-    id_cat NUMBER NOT NULL,
+    id_cat     NUMBER NOT NULL,
     nombre_cat VARCHAR2(45)
 );
 
@@ -69,6 +65,7 @@ ALTER TABLE recetas
 ALTER TABLE tipoplatos
     ADD CONSTRAINT tipoplatos_categoria_fk FOREIGN KEY ( cod_cat )
         REFERENCES categoria ( id_cat );
+
 
 
 

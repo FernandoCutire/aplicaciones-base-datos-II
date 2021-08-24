@@ -11,7 +11,7 @@ ALTER TABLE cantidades
                                                medida );
 
 CREATE TABLE categoria (
-    id_cat     NUMBER NOT NULL,
+    id_cat NUMBER NOT NULL,
     nombre_cat VARCHAR2(45)
 );
 
@@ -87,7 +87,7 @@ FROM
 
 CREATE VIEW VIEW_PLATOS_POR_HORARIO
 AS select
-    c.combre_cat, t.nombre_plato
+    c.nombre_cat, t.nombre_plato
 from
     categoria c, tipoplatos t
 where c.id_cat = t.cod_cat;

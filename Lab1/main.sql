@@ -12,7 +12,7 @@ ALTER TABLE cantidades
 
 CREATE TABLE categoria (
     id_cat     NUMBER NOT NULL,
-    n   ombre_cat VARCHAR2(45)
+    nombre_cat VARCHAR2(45)
 );
 
 ALTER TABLE categoria ADD CONSTRAINT categoria_pk PRIMARY KEY ( id_cat );

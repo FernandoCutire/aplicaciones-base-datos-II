@@ -3,16 +3,12 @@ CREATE TABLE cantidades (
     ingrediente NUMBER NOT NULL,
     cantidad    NUMBER NOT NULL,
     medida      NUMBER NOT NULL
-);
 
-ALTER TABLE cantidades
-    ADD CONSTRAINT cantidades_pk PRIMARY KEY ( receta,
-                                               ingrediente,
-                                               medida );
+);
 
 CREATE TABLE categoria (
     id_cat     NUMBER NOT NULL,
-    combre_cat VARCHAR2(45)
+    nombre_cat VARCHAR2(45)
 );
 
 ALTER TABLE categoria ADD CONSTRAINT categoria_pk PRIMARY KEY ( id_cat );
@@ -34,9 +30,9 @@ ALTER TABLE medidas ADD CONSTRAINT medidas_pk PRIMARY KEY ( id_umedida );
 CREATE TABLE recetas (
     id_receta     NUMBER NOT NULL,
     nombre_receta VARCHAR2(100),
-    preparacion   VARCHAR2(500),
+    preparacion   VARCHAR2(2500),
     duracion      VARCHAR2(10),
-    comentarios   VARCHAR2(500),
+    comentarios   VARCHAR2(2500),
     tipoplato     NUMBER NOT NULL
 );
 
@@ -69,6 +65,7 @@ ALTER TABLE recetas
 ALTER TABLE tipoplatos
     ADD CONSTRAINT tipoplatos_categoria_fk FOREIGN KEY ( cod_cat )
         REFERENCES categoria ( id_cat );
+
 
 
 
